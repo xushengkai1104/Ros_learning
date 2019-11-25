@@ -1,0 +1,19 @@
+About Raspberry Pi
+
+Raspberry Pi相当于一个微型电脑,内存硬盘以SD卡为主.
+实际使用过程中注意树莓派温度.购买时要和厂家沟通,散热片是必须的.
+
+树莓派3B支持ubuntu mate 16.04(已测试)
+ubuntu mate 16.04兼容ROS kinetic版本,也是目前使用最为广泛的一个版本,Kinetic维护到2021年.
+目前市面上的ros1基本为kinetic.使用其他版本均会产生兼容问题.
+
+树莓派3B+支持ubuntu mate 18.04
+兼容ROS melodic.
+
+树莓派4截止到2019年11月25日,并不支持ubuntu mate.但与windows IOT版本兼容.(目前未测试).
+
+注意: 烧写过程中需要安装Win32diskimager.并且尽量选用大容量的sd卡.使用过程中会流畅很多.建议16G及16G以上,Sandisk即可.
+
+如果之前并未接触过Linux命令.建议先从ros教材开始.当完成Ros环境的配置后.基本常见的linux命令已经掌握大部分.
+
+[树莓派全球开源社区](https://upload-images.jianshu.io/upload_images/13714448-9413183a2d79c2a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
