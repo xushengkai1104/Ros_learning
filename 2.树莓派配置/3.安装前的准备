@@ -1,0 +1,65 @@
+由于树莓派自带蓝牙模块.
+实际使用过程中会影响wifi通讯.
+所以需要关闭树莓派的蓝牙功能.
+
+**********************************
+关闭蓝牙指令为:
+sudo cp -r /lib/firmware/4.X
+**********************************
+
+但是不可能每次在开机后都要输入一遍.
+所以应该将某些设置成开机自启动选项.
+
+**********************************
+设置开机自启动选项指令:
+sudo vim /etc/rc.local
+**********************************
+
+把指令写在里面.简单粗暴.
+
+并且树莓派3B,及3B+的内存为1G.
+在catkin_make时,有时候会出现内存不足的情况.
+比如出现 virtual memory exhausted: Cannot allocate memory，编译失败。
+
+**********************************
+查看内存指令为:
+free -m
+**********************************
+
+增加虚拟内存参考网址: 
+https://blog.csdn.net/cscrazybing/article/details/79347309
+
+设置好了后.
+**********************************
+开虚拟内存指令:
+sudo swapon /usr/img/swap
+关虚拟内存指令:
+sudo swapoff /usr/img/swap
+**********************************
+
+开虚拟内存指令也要写在开机自启动里.
+
+更改下载源
+ubuntu mate不支持搜索下载源功能
+所以只能在terminal里更改源文件.
+
+sudo vim /etc/apt/sources.list
+换成ubuntu port的源,只有这个支持ubuntu mate
+注意,亲测,其他任何的源都会造成兼容问题.
+ubuntu mate只能用中科大的源.
+阿里云的源不好用.
+
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-backports main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-proposed main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-security main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-backports main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-proposed main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-security main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main multiverse restricted universe
+deb http://ports.ubuntu.com/ubuntu-ports/ xenial main universe restricted multiverse
+
+然后更新
+sudo apt-get update

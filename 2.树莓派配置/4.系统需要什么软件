@@ -7,7 +7,13 @@
 
 安装清单.
 vim. 安装完vim并使用的第一感受是,vim好像不太行.但实际上网上有很多vim的插件.配置成功后就会觉得还不错.但实际可以就用系统自带的pluma
+sudo apt-get install vim
+sudo apt-get update
+
+
 中文输入法.
+sudo apt-get install fcitx-sunpinyin
+
 ros-full-desktop(kinetic)
 
 
